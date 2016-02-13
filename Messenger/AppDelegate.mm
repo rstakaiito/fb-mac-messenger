@@ -472,12 +472,16 @@ static void NetReachCallback(SCNetworkReachabilityRef target,
 
 - (IBAction)reloadFromServer:(id)sender {
   NSString* url = nil;
+  /*
   if (_webView.mainFrame.DOMDocument != nil && _webView.mainFrame.DOMDocument.URL.length != 0) {
     NSLog(@"Reloading app");
     url = _webView.mainFrame.DOMDocument.URL;
   } else {
     url = @"https://www.messenger.com/login";
   }
+  */
+  
+  url = @"http://my.appcloud.vn";
   auto req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
   [_webView.mainFrame loadRequest:req];
   _lastReloadDate = [NSDate date];
